@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+  <title>ToDo</title>
+
+  <meta charset="utf-8" />
+
+</head>
+
+<body class="m-1 p-1">
+
+
+  <h3 class="bg-primary text-white p-3">{{ getTaskOwnerName() }} To Do List</h3> 
+
+<!-- interpolation above concept is called -->
+  <div class="my-1">
+
+    <input class="form-control" #todoText /> <!-- #todoText is the name for input control -->
+
+    <button class="btn btn-primary mt-1" (click)="addNewTask(todoText.value)">Add</button>
+
+  </div>
+
+
+  <table class="table table-striped">
+
+    <thead>
+
+      <tr>
+        <th>Index</th>
+
+        <th>Task Name</th>
+
+        <th>Task Status</th>
+
+        <th>Update Status</th>
+
+      </tr>
+
+      <!-- below is example of for loop in angular how we use
+           Syntax:
+                  *ngFor="interator ;[let index]"
+       -->
+
+      <tr *ngFor="let task of getTaskList(); let i=index">
+        <td>{{i+1}}</td>
+        <td>{{task.taskName}}</td>
+        <!-- <td>{{task.status}}</td> -->
+        <td [ngSwitch]="task.status"> <!-- this is switch case in angular -->
+                <span *ngSwitchCase="true">Completed</span>
+                <span *ngSwitchDefault>Not Completed</span>
+          </td>
+<!-- ngmodle is used to bind data to and from ts to html also called two way binding. -->
+        <td><input type="checkbox" [(ngModel)]="task.status" /></td>
+      </tr>
+
+    </thead>
+
+    <tbody>
+
+
+    </tbody>
+
+  </table>
+
+</body>
+
+</html>
