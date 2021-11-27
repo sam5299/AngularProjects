@@ -8,6 +8,9 @@ import {FormsModule} from '@angular/forms';
 import { Newcomponent1Component } from './newcomponent1/newcomponent1.component';
 import { Newcomponent2Component } from './newcomponent2/newcomponent2.component';
 import { MyComponentComponent } from './my-component/my-component.component';
+import { ButttonClickCompoComponent } from './buttton-click-compo/buttton-click-compo.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { MyComponentComponent } from './my-component/my-component.component';
     TableComponentComponent,
     Newcomponent1Component,
     Newcomponent2Component,
-    MyComponentComponent
+    MyComponentComponent,
+    ButttonClickCompoComponent,
+    ChildComponent,
+    ParentComponent
   ],
   imports: [
     BrowserModule,
